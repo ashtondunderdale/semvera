@@ -1,4 +1,6 @@
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+
+import '../widgets/landing_page/email_pop_up.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({super.key});
@@ -7,12 +9,10 @@ class LandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 59, 126, 80),
-      appBar: AppBar(
-        
-      ),
+      appBar: AppBar(),
       body: Center(
         child: SizedBox(
-          width: MediaQuery.sizeOf(context).width,
+          width: MediaQuery.of(context).size.width,
           height: 600,
           child: Row(
             children: [
@@ -41,11 +41,10 @@ class LandingPage extends StatelessWidget {
                         child: Text(
                           "Inspiring Green Innovation",
                           style: TextStyle(
-                            fontSize: 52,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                            letterSpacing: 1
-                          ),
+                              fontSize: 52,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              letterSpacing: 1),
                         ),
                       ),
                       const Text(
@@ -74,22 +73,28 @@ class LandingPage extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(10.0),
                                     borderSide: BorderSide.none,
                                   ),
-                                  contentPadding: const EdgeInsets.symmetric(horizontal: 20.0), 
+                                  contentPadding: const EdgeInsets.symmetric(
+                                      horizontal: 20.0),
                                 ),
                               ),
                             ),
-                            GestureDetector(
+                            Padding(
+                              padding: const EdgeInsets.only(left: 16),
+                              child: InkWell(
                               onTap: () {
-
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return const EmailPopUp();
+                                  },
+                                );
                               },
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 16),
                                 child: Container(
                                   width: 120,
                                   height: 40,
                                   decoration: BoxDecoration(
                                     color: Colors.white,
-                                    borderRadius: BorderRadius.circular(8)
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   child: const Center(
                                     child: Text(
