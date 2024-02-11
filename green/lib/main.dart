@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:green/views/landing_page.dart';
 
 void main() {
   runApp(const App());
@@ -10,11 +11,8 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      home: LandingPage()
     );
   }
 }
