@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+ import 'package:flutter/material.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({super.key});
@@ -6,51 +6,112 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 59, 126, 80),
+      appBar: AppBar(
+        
+      ),
       body: Center(
-        child: Center(
-          child: Container(
-            width: 700,
-            height: 300,
-            decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 233, 233, 233),
-              border: Border.all(color: const Color.fromARGB(255, 186, 186, 186), width: 2),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: Column(
-              mainAxisAlignment:MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const Padding(
-                  padding: EdgeInsets.only(bottom: 64),
-                  child: Text(
-                    "Coming Soon",
-                    style: TextStyle(
-                      fontSize: 48,
-                      color: Color.fromARGB(255, 79, 79, 79),
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: 400,
-                  height: 40,
-                  child: TextField(
-                    decoration: InputDecoration(
-                      filled: true,
-                      fillColor: Colors.white,
-                      hintText: 'email',
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8.0),
-                        borderSide: BorderSide.none,
+        child: SizedBox(
+          width: MediaQuery.sizeOf(context).width,
+          height: 600,
+          child: Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 128),
+                child: SizedBox(
+                  width: 700,
+                  height: 400,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 8),
+                          child: Text(
+                            "COMING SOON",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 229, 229, 229),
+                            ),
+                          ),
+                        ),
                       ),
-                      contentPadding: const EdgeInsets.symmetric(horizontal: 10), 
-                      alignLabelWithHint: true, 
-                    ),
-                    textAlign: TextAlign.start, 
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          "Inspiring Green Innovation",
+                          style: TextStyle(
+                            fontSize: 52,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            letterSpacing: 1
+                          ),
+                        ),
+                      ),
+                      const Text(
+                        "Solve problems while making a positive impact on the environment, every solution contributes to a greener, more sustainable future.",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 32),
+                        child: Row(
+                          children: [
+                            SizedBox(
+                              width: 300,
+                              height: 40,
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  filled: true,
+                                  fillColor: Colors.white,
+                                  hintText: 'Email',
+                                  hintStyle: const TextStyle(
+                                    color: Colors.grey,
+                                  ),
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10.0),
+                                    borderSide: BorderSide.none,
+                                  ),
+                                  contentPadding: const EdgeInsets.symmetric(horizontal: 20.0), 
+                                ),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 16),
+                                child: Container(
+                                  width: 120,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(8)
+                                  ),
+                                  child: const Center(
+                                    child: Text(
+                                      'GET NOTIFIED',
+                                      style: TextStyle(
+                                        color: Color.fromARGB(255, 65, 65, 65),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
