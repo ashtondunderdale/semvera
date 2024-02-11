@@ -25,14 +25,14 @@ class EmailPopUp extends StatelessWidget {
               padding: const EdgeInsets.all(20.0),
               child: Column(
                 children: [
-                  const Padding(
-                    padding: EdgeInsets.only(bottom: 32),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 32),
                     child: Text(
-                      'Thanks!',
-                      style: TextStyle(
+                      'Thank You!',
+                      style: defaultTextStyle.copyWith(
                         fontSize: 32,
                         fontWeight: FontWeight.bold,
-                        color: Colors.green,
+                        color: const Color.fromARGB(255, 108, 182, 111),
                         letterSpacing: 1
                       ),
                     ),
@@ -42,8 +42,8 @@ class EmailPopUp extends StatelessWidget {
                       alignment: Alignment.centerLeft,
                       child: Text(
                         emailWelcomeMessage,
-                        style: TextStyle(
-                          fontSize: 14,
+                        style: defaultTextStyle.copyWith(
+                          fontSize: 13,
                           color: textColour
                         ),
                       ),
@@ -54,7 +54,7 @@ class EmailPopUp extends StatelessWidget {
             ),
             const Spacer(),
             Padding(
-              padding: const EdgeInsets.only(bottom: 16),
+              padding: const EdgeInsets.only(bottom: 12),
               child: SizedBox(
                 width: 80,
                 height: 40,
@@ -64,7 +64,7 @@ class EmailPopUp extends StatelessWidget {
                   },
                   child: Text(
                     'Close',
-                    style: TextStyle(
+                    style: defaultTextStyle.copyWith(
                       fontSize: 16.0,
                       fontWeight: FontWeight.bold,
                       color: textColour
