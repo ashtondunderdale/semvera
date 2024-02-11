@@ -25,40 +25,50 @@ class EmailPopUp extends StatelessWidget {
               padding: const EdgeInsets.all(20.0),
               child: Column(
                 children: [
-                  Text(
-                    'Thank You!',
-                    style: TextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
-                      color: textColour
+                  const Padding(
+                    padding: EdgeInsets.only(bottom: 32),
+                    child: Text(
+                      'Thanks!',
+                      style: TextStyle(
+                        fontSize: 32,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.green,
+                        letterSpacing: 1
+                      ),
                     ),
                   ),
-                  const SizedBox(height: 10.0),
-                  Text(
-                    'You will be notified when the product has been launched.',
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      color: textColour
+                  SizedBox(
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        emailWelcomeMessage,
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: textColour
+                        ),
+                      ),
                     ),
-                    textAlign: TextAlign.center,
                   ),
                 ],
               ),
             ),
             const Spacer(),
-            SizedBox(
-              width: 80,
-              height: 40,
-              child: TextButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: Text(
-                  'Close',
-                  style: TextStyle(
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.bold,
-                    color: textColour
+            Padding(
+              padding: const EdgeInsets.only(bottom: 16),
+              child: SizedBox(
+                width: 80,
+                height: 40,
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text(
+                    'Close',
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.bold,
+                      color: textColour
+                    ),
                   ),
                 ),
               ),

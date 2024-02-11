@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:green/globals.dart';
 
 import '../widgets/landing_page/email_pop_up.dart';
 
@@ -8,8 +9,7 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 59, 126, 80),
-      appBar: AppBar(),
+      backgroundColor: backgroundColor,
       body: Center(
         child: SizedBox(
           width: MediaQuery.of(context).size.width,
@@ -41,10 +41,11 @@ class LandingPage extends StatelessWidget {
                         child: Text(
                           "Inspiring Green Innovation",
                           style: TextStyle(
-                              fontSize: 52,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                              letterSpacing: 1),
+                            fontSize: 52,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            letterSpacing: 1
+                          ),
                         ),
                       ),
                       const Text(
@@ -73,8 +74,7 @@ class LandingPage extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(10.0),
                                     borderSide: BorderSide.none,
                                   ),
-                                  contentPadding: const EdgeInsets.symmetric(
-                                      horizontal: 20.0),
+                                  contentPadding: const EdgeInsets.symmetric(horizontal: 20.0),                                  
                                 ),
                               ),
                             ),
