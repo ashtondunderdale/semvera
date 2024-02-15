@@ -17,6 +17,16 @@ class LandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
+      appBar: AppBar(
+        backgroundColor: backgroundColor,
+        title: Text(
+          "Green",
+          style: defaultTextStyle.copyWith(
+            color: Colors.white,
+            fontSize: 32
+          ),
+        ),
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
