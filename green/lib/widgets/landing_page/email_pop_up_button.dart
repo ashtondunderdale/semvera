@@ -4,7 +4,9 @@ import '../../globals.dart';
 import 'email_pop_up.dart';
 
 class EmailPopUpButton extends StatelessWidget {
-  const EmailPopUpButton({super.key});
+  const EmailPopUpButton({super.key, required this.onPressed});
+
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +20,8 @@ class EmailPopUpButton extends StatelessWidget {
               return const EmailPopUp();
             },
           );
+
+          onPressed();
         },
         child: Container(
           width: 120,

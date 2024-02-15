@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:green/views/landing_page.dart';
 
 void main() {
-  runApp(const App());
+  runApp(const Green());
 }
 
-class App extends StatelessWidget {
-  const App({super.key});
+class Green extends StatelessWidget {
+  const Green({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: LandingPage()
     );

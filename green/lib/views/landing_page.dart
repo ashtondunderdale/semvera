@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:green/globals.dart';
+import 'package:green/widgets/landing_page/down_arrows.dart';
 import 'package:green/widgets/landing_page/landing_information.dart';
 
+import '../services/api_service.dart';
 import '../widgets/landing_page/email_pop_up_button.dart';
 import '../widgets/landing_page/email_text_field.dart';
 
 class LandingPage extends StatelessWidget {
-  const LandingPage({super.key});
+  LandingPage({super.key});
+
+  final TextEditingController emailController = TextEditingController();
+  final APIService api = APIService();
 
   @override
   Widget build(BuildContext context) {
@@ -18,23 +23,27 @@ class LandingPage extends StatelessWidget {
           SizedBox(
             width: MediaQuery.of(context).size.width,
             height: 600,
-            child: const Row(
+            child: Row(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 128),
+                  padding: const EdgeInsets.only(left: 128),
                   child: SizedBox(
                     width: 800,
                     height: 400,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        LandingInformation(),
+                        const LandingInformation(),
                         Padding(
-                          padding: EdgeInsets.only(top: 32),
+                          padding: const EdgeInsets.only(top: 32),
                           child: Row(
                             children: [
-                              EmailTextField(),
-                              EmailPopUpButton(),
+                              EmailTextField(emailController: emailController),
+                              EmailPopUpButton(
+                                onPressed: () {
+                                  api.addEmailToDatabase(emailController.text);
+                                },
+                              ),
                             ],
                           ),
                         ),
@@ -45,26 +54,7 @@ class LandingPage extends StatelessWidget {
               ],
             ),
           ),
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Icon(
-                Icons.arrow_downward,
-                color: Colors.white,
-                size: 40,
-              ),
-              Icon(
-                Icons.arrow_downward,
-                color: Colors.white,
-                size: 40,
-              ),
-              Icon(
-                Icons.arrow_downward,
-                color: Colors.white,
-                size: 40,
-              ),        
-            ],
-          )
+          const DownArrows()
         ],
       ),
     );
