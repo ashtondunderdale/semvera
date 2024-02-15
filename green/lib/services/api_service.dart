@@ -1,16 +1,20 @@
+import 'dart:convert';
+
 import 'package:http/http.dart' as http;
 
 class APIService {
 
-  void addEmailToDatabase(String email) async {
+  void addPreLaunchEmail(String email) async {
     try {
-      http.Response response = await http.get(Uri.parse("https://localhost:7164/Green/GetQuestions"));
-
-      print(response.body);
+      await http.post(Uri.parse("https://localhost:7164/Green/AddPreLaunchEmail"),
+        headers: <String, String>{'Content-Type': 'application/json; charset=UTF-8'},
+        body: jsonEncode({"email":email})
+      );
 
     } catch (exception) {
       print(exception);
     }
-
   }
+
+
 }

@@ -41,7 +41,7 @@ class LandingPage extends StatelessWidget {
                               EmailTextField(emailController: emailController),
                               EmailPopUpButton(
                                 onPressed: () {
-                                  api.addEmailToDatabase(emailController.text);
+                                  api.addPreLaunchEmail(emailController.text);
                                 },
                               ),
                             ],
