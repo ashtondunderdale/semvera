@@ -11,108 +11,137 @@ class Register extends StatelessWidget {
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController usernameController = TextEditingController();
 
+  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: lightGreen,
       body: Center(
         child: Container(
-          width: 600,
-          height: 300,
+          width: 400,
+          height: 480,
           decoration: BoxDecoration(
             color: darkGreen,
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(16), 
           ),
           padding: const EdgeInsets.all(20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(
-                height: 40,
-                width: 360,
-                child: TextField(
+          child: Form(
+            key: _formKey, 
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextFormField(
                   controller: emailController,
-                  cursorColor: Colors.white,
+                  cursorColor: lightGreen, 
                   decoration: InputDecoration(
-                    labelText: 'email',
+                    labelText: 'Email',
                     labelStyle: defaultTextStyle.copyWith(color: lightGreen),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: lightGreen),
+                      borderRadius: BorderRadius.circular(12), 
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: lightGreen),
+                      borderRadius: BorderRadius.circular(12), 
                     ),
                   ),
                   style: defaultTextStyle.copyWith(color: lightGreen),
+                  validator: (value) {
+                    if (value == null || value.isEmpty || !value.contains('@')) {
+                      return 'Please enter a valid email address';
+                    }
+                    return null;
+                  },
                 ),
-              ),
-              const SizedBox(height: 10),
-              SizedBox(
-                height: 40,
-                width: 360,
-                child: TextField(
+                const SizedBox(height: 20),
+                TextFormField(
                   controller: passwordController,
-                  cursorColor: Colors.white,
+                  cursorColor: lightGreen, 
                   decoration: InputDecoration(
-                    labelText: 'password',
+                    labelText: 'Password',
                     labelStyle: defaultTextStyle.copyWith(color: lightGreen),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: lightGreen),
+                      borderRadius: BorderRadius.circular(12), 
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: lightGreen),
+                      borderRadius: BorderRadius.circular(12), 
                     ),
                   ),
                   obscureText: true,
                   style: defaultTextStyle.copyWith(color: lightGreen),
+                  validator: (value) {
+                    if (value == null || value.isEmpty || value.length < 8) {
+                      return 'Password must be at least 8 characters long';
+                    }
+                    return null;
+                  },
                 ),
-              ),
-              const SizedBox(height: 20),
-              SizedBox(
-                height: 40,
-                width: 360,
-                child: TextField(
+                const SizedBox(height: 20),
+                TextFormField(
                   controller: usernameController,
-                  cursorColor: Colors.white,
+                  cursorColor: lightGreen, 
                   decoration: InputDecoration(
-                    labelText: 'username',
+                    labelText: 'Username',
                     labelStyle: defaultTextStyle.copyWith(color: lightGreen),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: lightGreen),
+                      borderRadius: BorderRadius.circular(12),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: lightGreen),
+                      borderRadius: BorderRadius.circular(12),
                     ),
                   ),
                   style: defaultTextStyle.copyWith(color: lightGreen),
+                  validator: (value) {
+                    if (value == null || value.isEmpty || value.length < 3) {
+                      return 'Username must be at least 3 characters long';
+                    }
+                    return null;
+                  },
                 ),
-              ),
-              const SizedBox(height: 20),
-              InkWell(
-                onTap: () async {
-                  if (await api.tryRegister(emailController.text, passwordController.text, usernameController.text)) {
-                    Navigator.pushNamed(context, '/login');           
-                  }
-                },
-                child: Container(
-                  width: 120,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    color: lightGreen,
-                    borderRadius: BorderRadius.circular(8),
+                const SizedBox(height: 20),
+                ElevatedButton( 
+                  onPressed: () async {
+                    if (_formKey.currentState!.validate()) { 
+                      if (await api.tryRegister(emailController.text, passwordController.text, usernameController.text)) {
+                        Navigator.pushNamed(context, '/login');           
+                      }
+                    }
+                  },
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
                   ),
-                  child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 12),
                     child: Text(
                       "Register",
                       style: defaultTextStyle.copyWith(
-                        fontSize: 14,
+                        fontSize: 16, 
                         color: darkGreen,
                       ),
                     ),
                   ),
                 ),
-              ),
-            ],
+                TextButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/login");
+                  }, 
+                  child: Text(
+                    "or login here",
+                    style: defaultTextStyle.copyWith(
+                      color: lightGreen,
+                      fontSize: 14, 
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
