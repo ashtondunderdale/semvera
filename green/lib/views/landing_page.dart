@@ -11,6 +11,7 @@ import '../widgets/landing_page/email_text_field.dart';
 import '../widgets/landing_page/footer.dart';
 import '../widgets/landing_page/how_it_works.dart';
 import '../widgets/landing_page/name_text_field.dart';
+import '../widgets/landing_page/triple_text_box.dart';
 
 class LandingPage extends StatelessWidget {
   LandingPage({super.key});
@@ -29,7 +30,7 @@ class LandingPage extends StatelessWidget {
         surfaceTintColor: backgroundColor,
         backgroundColor: backgroundColor,
         title: Text(
-          "Green",
+          "Semvera",
           style: defaultTextStyle.copyWith(
             color: primaryTextColour,
             fontSize: 32
@@ -94,8 +95,8 @@ class LandingPage extends StatelessWidget {
             const DownArrows(),
             const AboutUs(),
             const HowItWorks(),
+            const TripleTextBox(),
             Interested(scrollController: _scrollController),
-            Container(height: 400),
             const Footer(),
           ],
         ),

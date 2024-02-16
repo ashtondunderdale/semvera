@@ -11,7 +11,7 @@ class Interested extends StatelessWidget {
     return SizedBox(
       width: 480,
       child: Padding(
-        padding: const EdgeInsets.only(top: 128),
+        padding: const EdgeInsets.only(top: 180, bottom: 32),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [

@@ -7,109 +7,127 @@ class Footer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.sizeOf(context).width,
-      height: 200,
-      decoration: BoxDecoration(
-        color: primaryTextColour,
-        border: Border.all(color: primaryTextColour)
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 32, top: 16),
-                child: Icon(
-                  FontAwesomeIcons.instagram,
-                  size: 20,
-                  color: backgroundColor,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 32, top: 16),
-                child: Icon(
-                  FontAwesomeIcons.twitter,
-                  size: 20,
-                  color: backgroundColor,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 32, top: 16),
-                child: Icon(
-                  FontAwesomeIcons.discord,
-                  size: 20,
-                  color: backgroundColor,
-                ),
-              ),
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 80, top: 12),
-            child: SizedBox(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "CONTACT US",
+    return Padding(
+      padding: const EdgeInsets.only(top: 64),
+      child: Container(
+        width: MediaQuery.sizeOf(context).width,
+        height: 200,
+        decoration: BoxDecoration(
+          color: primaryTextColour,
+          border: Border.all(color: primaryTextColour)
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 8),
+                  child: Text(
+                    "Semvera",
                     style: defaultTextStyle.copyWith(
                       color: backgroundColor,
                       fontSize: 20
                     ),
                   ),
-                  const Spacer(),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 16),
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(right: 8),
-                          child: Icon(
-                            Icons.phone,
-                            color: backgroundColor,
-                            size: 16,
-                          ),
-                        ),
-                        Text(
-                          "07123 492311",
-                          style: defaultTextStyle.copyWith(
-                            color: backgroundColor,
-                            fontSize: 14,
-                            letterSpacing: 1
-                          ),
-                        ),
-                      ],
+                ),
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 32, bottom: 16),
+                      child: Icon(
+                        FontAwesomeIcons.instagram,
+                        size: 20,
+                        color: backgroundColor,
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 16),
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(right: 8),
-                          child: Icon(
-                            Icons.mail,
-                            color: backgroundColor,
-                            size: 16,
-                          ),
-                        ),
-                        Text(
-                          "info@green.co.uk",
-                          style: defaultTextStyle.copyWith(
-                            color: backgroundColor,
-                            fontSize: 14,
-                            letterSpacing: 0.7
-                          ),
-                        ),
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.only(left: 32, bottom: 16),
+                      child: Icon(
+                        FontAwesomeIcons.twitter,
+                        size: 20,
+                        color: backgroundColor,
+                      ),
                     ),
-                  ),
-                ],
-              ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 32, bottom: 16),
+                      child: Icon(
+                        FontAwesomeIcons.discord,
+                        size: 20,
+                        color: backgroundColor,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
-          )
-        ],
+            Padding(
+              padding: const EdgeInsets.only(left: 80, top: 12),
+              child: SizedBox(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "CONTACT US",
+                      style: defaultTextStyle.copyWith(
+                        color: backgroundColor,
+                        fontSize: 20
+                      ),
+                    ),
+                    const Spacer(),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 16),
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(right: 8),
+                            child: Icon(
+                              Icons.phone,
+                              color: backgroundColor,
+                              size: 16,
+                            ),
+                          ),
+                          Text(
+                            "07123 492311",
+                            style: defaultTextStyle.copyWith(
+                              color: backgroundColor,
+                              fontSize: 14,
+                              letterSpacing: 1
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 16),
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(right: 8),
+                            child: Icon(
+                              Icons.mail,
+                              color: backgroundColor,
+                              size: 16,
+                            ),
+                          ),
+                          Text(
+                            "info@green.co.uk",
+                            style: defaultTextStyle.copyWith(
+                              color: backgroundColor,
+                              fontSize: 14,
+                              letterSpacing: 0.7,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

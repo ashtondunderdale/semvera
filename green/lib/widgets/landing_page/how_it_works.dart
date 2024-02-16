@@ -10,7 +10,7 @@ class HowItWorks extends StatelessWidget {
     return Align(
       alignment: Alignment.centerRight,
       child: SizedBox(
-        width: 600,
+        width: 700,
         child: Padding(
           padding: const EdgeInsets.only(left: 48, top: 128),
           child: Column(

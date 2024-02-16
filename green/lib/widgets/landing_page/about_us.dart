@@ -10,7 +10,7 @@ class AboutUs extends StatelessWidget {
     return Align(
       alignment: Alignment.centerLeft,
       child: SizedBox(
-        width: 600,
+        width: 700,
         child: Padding(
           padding: const EdgeInsets.only(left: 48, top: 128),
           child: Column(
