@@ -46,9 +46,10 @@ class Footer extends StatelessWidget {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 64, top: 12),
+            padding: const EdgeInsets.only(left: 80, top: 12),
             child: SizedBox(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     "CONTACT US",
@@ -59,7 +60,30 @@ class Footer extends StatelessWidget {
                   ),
                   const Spacer(),
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 16, left: 28),
+                    padding: const EdgeInsets.only(bottom: 16),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(right: 8),
+                          child: Icon(
+                            Icons.phone,
+                            color: backgroundColor,
+                            size: 16,
+                          ),
+                        ),
+                        Text(
+                          "07123 492311",
+                          style: defaultTextStyle.copyWith(
+                            color: backgroundColor,
+                            fontSize: 14,
+                            letterSpacing: 1
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 16),
                     child: Row(
                       children: [
                         Padding(
@@ -67,19 +91,20 @@ class Footer extends StatelessWidget {
                           child: Icon(
                             Icons.mail,
                             color: backgroundColor,
-                            size: 20,
+                            size: 16,
                           ),
                         ),
                         Text(
                           "info@green.co.uk",
                           style: defaultTextStyle.copyWith(
                             color: backgroundColor,
-                            fontSize: 14
+                            fontSize: 14,
+                            letterSpacing: 0.7
                           ),
                         ),
                       ],
                     ),
-                  )
+                  ),
                 ],
               ),
             ),

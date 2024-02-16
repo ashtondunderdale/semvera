@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:green/globals.dart';
 import 'package:green/widgets/landing_page/about_us.dart';
 import 'package:green/widgets/landing_page/down_arrows.dart';
+import 'package:green/widgets/landing_page/interested.dart';
 import 'package:green/widgets/landing_page/landing_information.dart';
 
 import '../services/api_service.dart';
@@ -16,6 +17,7 @@ class LandingPage extends StatelessWidget {
 
   final TextEditingController emailController = TextEditingController();
   final TextEditingController nameController = TextEditingController();
+  final ScrollController _scrollController = ScrollController();
 
   final APIService api = APIService();
 
@@ -35,6 +37,8 @@ class LandingPage extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
+        controller: _scrollController, // Add scroll controller here
+        physics: const AlwaysScrollableScrollPhysics(),
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
@@ -90,6 +94,7 @@ class LandingPage extends StatelessWidget {
             const DownArrows(),
             const AboutUs(),
             const HowItWorks(),
+            Interested(scrollController: _scrollController),
             Container(height: 400),
             const Footer(),
           ],
