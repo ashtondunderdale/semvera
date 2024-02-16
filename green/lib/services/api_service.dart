@@ -8,7 +8,7 @@ class APIService {
       http.Response response = await http.post(Uri.parse("https://localhost:7164/Green/AddPreLaunchEmail"),
         headers: <String, String>{'Content-Type': 'application/json; charset=UTF-8'},
         body: jsonEncode({"emailAddress": email, "name": name, "timeStamp": DateTime.now().toString()})
-      );      
+      );    
 
     } catch (exception) {
       print(exception);

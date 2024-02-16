@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:green/globals.dart';
+import 'package:green/widgets/landing_page/about_us.dart';
 import 'package:green/widgets/landing_page/down_arrows.dart';
 import 'package:green/widgets/landing_page/landing_information.dart';
 
 import '../services/api_service.dart';
 import '../widgets/landing_page/email_pop_up_button.dart';
 import '../widgets/landing_page/email_text_field.dart';
+import '../widgets/landing_page/footer.dart';
+import '../widgets/landing_page/how_it_works.dart';
 import '../widgets/landing_page/name_text_field.dart';
 
 class LandingPage extends StatelessWidget {
@@ -85,21 +88,10 @@ class LandingPage extends StatelessWidget {
               ),
             ),
             const DownArrows(),
-            const SizedBox(
-              width: 400,
-              height: 200,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "About us"
-                  ),
-                  Text(
-                    ""
-                  ),
-                ],
-              )
-            )
+            const AboutUs(),
+            const HowItWorks(),
+            Container(height: 1000),
+            const Footer(),
           ],
         ),
       ),
