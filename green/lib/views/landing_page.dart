@@ -6,11 +6,14 @@ import 'package:green/widgets/landing_page/landing_information.dart';
 import '../services/api_service.dart';
 import '../widgets/landing_page/email_pop_up_button.dart';
 import '../widgets/landing_page/email_text_field.dart';
+import '../widgets/landing_page/name_text_field.dart';
 
 class LandingPage extends StatelessWidget {
   LandingPage({super.key});
 
   final TextEditingController emailController = TextEditingController();
+  final TextEditingController nameController = TextEditingController();
+
   final APIService api = APIService();
 
   @override
@@ -48,11 +51,26 @@ class LandingPage extends StatelessWidget {
                           padding: const EdgeInsets.only(top: 32),
                           child: Row(
                             children: [
-                              EmailTextField(emailController: emailController),
-                              EmailPopUpButton(
-                                onPressed: () {
-                                  api.addPreLaunchEmail(emailController.text);
-                                },
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(bottom: 8),
+                                    child: NameTextField(nameController: nameController),
+                                  ),
+                                  Row(
+                                    children: [
+                                      EmailTextField(emailController: emailController),
+                                      EmailPopUpButton(
+                                        onPressed: () {
+                                          api.addPreLaunchEmail(emailController.text, nameController.text);
+                                          emailController.text = "";
+                                          nameController.text = "";
+                                        },
+                                      ),
+                                    ],
+                                  )
+                                ],
                               ),
                             ],
                           ),

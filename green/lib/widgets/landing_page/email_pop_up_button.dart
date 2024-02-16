@@ -24,7 +24,7 @@ class EmailPopUpButton extends StatelessWidget {
           onPressed();
         },
         child: Container(
-          width: 120,
+          width: 100,
           height: 40,
           decoration: BoxDecoration(
             color: Colors.white,
@@ -32,7 +32,7 @@ class EmailPopUpButton extends StatelessWidget {
           ),
           child: Center(
             child: Text(
-              'GET NOTIFIED',
+              'NOTIFY ME',
               style: defaultTextStyle.copyWith(
                 color: const Color.fromARGB(255, 172, 172, 172),
                 fontSize: 14,
