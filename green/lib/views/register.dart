@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:green/globals.dart';
 import 'package:green/services/api_service.dart';
 
-class Login extends StatelessWidget {
-  Login({super.key});
+class Register extends StatelessWidget {
+  Register({super.key});
 
   final APIService api = APIService();
 
-  final TextEditingController usernameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController usernameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -30,10 +31,10 @@ class Login extends StatelessWidget {
                 height: 40,
                 width: 360,
                 child: TextField(
-                  controller: usernameController,
+                  controller: emailController,
                   cursorColor: Colors.white,
                   decoration: InputDecoration(
-                    labelText: 'username',
+                    labelText: 'email',
                     labelStyle: defaultTextStyle.copyWith(color: lightGreen),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: lightGreen),
@@ -45,7 +46,7 @@ class Login extends StatelessWidget {
                   style: defaultTextStyle.copyWith(color: lightGreen),
                 ),
               ),
-              const SizedBox(height: 20,),
+              const SizedBox(height: 10),
               SizedBox(
                 height: 40,
                 width: 360,
@@ -67,11 +68,30 @@ class Login extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
+              SizedBox(
+                height: 40,
+                width: 360,
+                child: TextField(
+                  controller: usernameController,
+                  cursorColor: Colors.white,
+                  decoration: InputDecoration(
+                    labelText: 'username',
+                    labelStyle: defaultTextStyle.copyWith(color: lightGreen),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: lightGreen),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: lightGreen),
+                    ),
+                  ),
+                  style: defaultTextStyle.copyWith(color: lightGreen),
+                ),
+              ),
+              const SizedBox(height: 20),
               InkWell(
                 onTap: () async {
-                  if (await api.tryLogin(usernameController.text, passwordController.text)) {
-                    
-                    //Navigator.pushNamed(context, '/home');
+                  if (await api.tryLogin(usernameController.text, passwordController.text)) {         
+                    Navigator.pushNamed(context, '/login');
                   }
                 },
                 child: Container(
@@ -83,7 +103,7 @@ class Login extends StatelessWidget {
                   ),
                   child: Center(
                     child: Text(
-                      "Login",
+                      "Register",
                       style: defaultTextStyle.copyWith(
                         fontSize: 14,
                         color: darkGreen,

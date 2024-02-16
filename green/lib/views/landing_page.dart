@@ -15,12 +15,12 @@ import '../widgets/landing_page/triple_text_box.dart';
 
 class LandingPage extends StatelessWidget {
   LandingPage({super.key});
+  
+  final APIService api = APIService();
 
   final TextEditingController emailController = TextEditingController();
   final TextEditingController nameController = TextEditingController();
   final ScrollController _scrollController = ScrollController();
-
-  final APIService api = APIService();
 
   @override
   Widget build(BuildContext context) {
