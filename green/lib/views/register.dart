@@ -90,8 +90,8 @@ class Register extends StatelessWidget {
               const SizedBox(height: 20),
               InkWell(
                 onTap: () async {
-                  if (await api.tryLogin(usernameController.text, passwordController.text)) {         
-                    Navigator.pushNamed(context, '/login');
+                  if (await api.tryRegister(emailController.text, passwordController.text, usernameController.text)) {
+                    Navigator.pushNamed(context, '/login');           
                   }
                 },
                 child: Container(

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:green/views/home.dart';
-import 'package:green/views/landing_page.dart';
 import 'package:green/views/login.dart';
 import 'package:green/views/register.dart';
 

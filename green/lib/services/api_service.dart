@@ -18,6 +18,7 @@ class APIService {
     }
   }
 
+
   Future<bool> tryLogin(String username, String password) async {
     try {
         http.Response response = await http.post(Uri.parse("https://localhost:7164/Semvera/TryLogin"),
@@ -26,8 +27,24 @@ class APIService {
         );   
 
         var success = jsonDecode(response.body)['success'];
-        print(success);
-        return true;
+        return success;
+
+    } catch (exception) {
+      print(exception);
+      return false;
+    }
+  }
+
+
+  Future<bool> tryRegister(String email, String password, String username) async {
+    try {
+        http.Response response = await http.post(Uri.parse("https://localhost:7164/Semvera/TryRegister"),
+          headers: <String, String>{'Content-Type': 'application/json; charset=UTF-8'},
+          body: jsonEncode({"email": email, "password": password, "username": username})
+        );   
+
+        var success = jsonDecode(response.body)['success'];
+        return success;
 
     } catch (exception) {
       print(exception);
