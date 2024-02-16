@@ -48,9 +48,12 @@ class Register extends StatelessWidget {
                   ),
                   style: defaultTextStyle.copyWith(color: lightGreen),
                   validator: (value) {
-                    if (value == null || value.isEmpty || !value.contains('@')) {
-                      return 'Please enter a valid email address';
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter an email address';
                     }
+                    final emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
+                    if (!emailRegex.hasMatch(value)) return 'Please enter a valid email address';
+                    
                     return null;
                   },
                 ),
