@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:green/globals.dart';
+import 'package:green/services/api_service.dart';
 
 class Login extends StatelessWidget {
-  const Login({super.key});
+  Login({super.key});
+
+  final APIService api = APIService();
+  TextEditingController usernameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +29,7 @@ class Login extends StatelessWidget {
                 height: 40,
                 width: 360,
                 child: TextField(
+                  controller: usernameController,
                   cursorColor: Colors.white,
                   decoration: InputDecoration(
                     labelText: 'Username',
@@ -43,6 +49,7 @@ class Login extends StatelessWidget {
                 height: 40,
                 width: 360,
                 child: TextField(
+                  controller: passwordController,
                   cursorColor: Colors.white,
                   decoration: InputDecoration(
                     labelText: 'Password',
@@ -60,8 +67,11 @@ class Login extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               InkWell(
-                onTap: () {
-                  Navigator.pushNamed(context, '/home');
+                onTap: () async {
+                  if (await api.tryLogin(usernameController.text, passwordController.text)) {
+                    
+                    Navigator.pushNamed(context, '/home');
+                  }
                 },
                 child: Container(
                   width: 120,

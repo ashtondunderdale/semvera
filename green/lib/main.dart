@@ -18,7 +18,7 @@ class Green extends StatelessWidget {
       home: Login(),
       routes: {
         '/home': (context) => const Home(),
-        '/login': (context) => const Login(),
+        '/login': (context) => Login(),
       },
     );
   }

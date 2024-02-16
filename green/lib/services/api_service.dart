@@ -7,7 +7,7 @@ class APIService {
     try {
 
       if (email.isNotEmpty) {
-        http.Response response = await http.post(Uri.parse("https://localhost:7164/Green/AddPreLaunchEmail"),
+        await http.post(Uri.parse("https://localhost:7164/Green/AddPreLaunchEmail"),
           headers: <String, String>{'Content-Type': 'application/json; charset=UTF-8'},
           body: jsonEncode({"emailAddress": email, "name": name, "timeStamp": DateTime.now().toString()})
         );   
@@ -18,5 +18,18 @@ class APIService {
     }
   }
 
+  Future<bool> tryLogin(String username, String password) async {
+    try {
+        await http.post(Uri.parse("https://localhost:7164/Green/AddPreLaunchEmail"),
+          headers: <String, String>{'Content-Type': 'application/json; charset=UTF-8'},
+          body: jsonEncode({"username": username, "password": password})
+        );   
 
+        return true;
+
+    } catch (exception) {
+      print(exception);
+      return false;
+    }
+  }
 }
