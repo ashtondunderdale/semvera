@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 Color textColour = const Color.fromARGB(255, 57, 57, 57);
-Color backgroundColor = Color.fromARGB(255, 174, 195, 178);
+Color backgroundColor = Color.fromARGB(255, 193, 225, 202);
 Color primaryTextColour = const Color.fromARGB(255, 41, 94, 64);
     
 final TextStyle defaultTextStyle = GoogleFonts.poppins();

@@ -90,7 +90,7 @@ class LandingPage extends StatelessWidget {
             const DownArrows(),
             const AboutUs(),
             const HowItWorks(),
-            Container(height: 1000),
+            Container(height: 400),
             const Footer(),
           ],
         ),
