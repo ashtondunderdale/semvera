@@ -25,3 +25,9 @@ Our mission is to empower environmental change through coding. Our platform offe
 String howItWorks = '''
 Participating is simple: choose a coding challenge from our platform, solve it using your coding skills, and submit your solution. Each solved challenge contributes to planting trees, helping combat deforestation and promote sustainability.
 ''';
+
+String interested = '''
+Sign up to our exclusive pre-launch phase and unlock special bonuses and rewards. 
+
+Join use today to make a difference.
+''';

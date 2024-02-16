@@ -9,7 +9,7 @@ class Interested extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 600,
+      width: 480,
       child: Padding(
         padding: const EdgeInsets.only(top: 128),
         child: Column(
@@ -23,20 +23,38 @@ class Interested extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 48, top: 8),
+              padding: const EdgeInsets.only(top: 8),
               child: Text(
-                "", // Add your text here
+                interested, // Add your text here
                 style: defaultTextStyle.copyWith(
                   color: primaryTextColour,
                   fontSize: 16,
                 ),
+                textAlign: TextAlign.center
               ),
             ),
-            TextButton(
-              onPressed: () {
+            InkWell(
+              onTap: () {
                 scrollController.animateTo(0, duration: const Duration(seconds: 1), curve: Curves.easeInOut);
               },
-              child: const Text("Sign up!"),
+              child: Container(
+                width: 100,
+                height: 40,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(color: primaryTextColour)
+                ),
+                child: Center(
+                  child: Text(
+                    'SIGN UP',
+                    style: defaultTextStyle.copyWith(
+                      color: primaryTextColour,
+                      fontSize: 14,
+                    ),
+                  ),
+                ),
+              ),
             )
           ],
         ),
