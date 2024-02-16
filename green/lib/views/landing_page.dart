@@ -25,20 +25,20 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: lightGreen,
       appBar: AppBar(
-        surfaceTintColor: backgroundColor,
-        backgroundColor: backgroundColor,
+        surfaceTintColor: lightGreen,
+        backgroundColor: lightGreen,
         title: Text(
           "Semvera",
           style: defaultTextStyle.copyWith(
-            color: primaryTextColour,
+            color: darkGreen,
             fontSize: 32
           ),
         ),
       ),
       body: SingleChildScrollView(
-        controller: _scrollController, // Add scroll controller here
+        controller: _scrollController,
         physics: const AlwaysScrollableScrollPhysics(),
         scrollDirection: Axis.vertical,
         child: Column(

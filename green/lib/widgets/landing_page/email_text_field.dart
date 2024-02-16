@@ -19,7 +19,7 @@ class EmailTextField extends StatelessWidget {
           fillColor: Colors.white,
           hintText: 'Email',
           hintStyle: defaultTextStyle.copyWith(
-            color: primaryTextColour,
+            color: darkGreen,
           ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.0),

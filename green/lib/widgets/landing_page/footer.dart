@@ -13,8 +13,8 @@ class Footer extends StatelessWidget {
         width: MediaQuery.sizeOf(context).width,
         height: 200,
         decoration: BoxDecoration(
-          color: primaryTextColour,
-          border: Border.all(color: primaryTextColour)
+          color: darkGreen,
+          border: Border.all(color: lightGreen)
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.end,
@@ -27,7 +27,7 @@ class Footer extends StatelessWidget {
                   child: Text(
                     "Semvera",
                     style: defaultTextStyle.copyWith(
-                      color: backgroundColor,
+                      color: lightGreen,
                       fontSize: 20
                     ),
                   ),
@@ -39,7 +39,7 @@ class Footer extends StatelessWidget {
                       child: Icon(
                         FontAwesomeIcons.instagram,
                         size: 20,
-                        color: backgroundColor,
+                        color: lightGreen,
                       ),
                     ),
                     Padding(
@@ -47,7 +47,7 @@ class Footer extends StatelessWidget {
                       child: Icon(
                         FontAwesomeIcons.twitter,
                         size: 20,
-                        color: backgroundColor,
+                        color: lightGreen,
                       ),
                     ),
                     Padding(
@@ -55,7 +55,7 @@ class Footer extends StatelessWidget {
                       child: Icon(
                         FontAwesomeIcons.discord,
                         size: 20,
-                        color: backgroundColor,
+                        color: lightGreen,
                       ),
                     ),
                   ],
@@ -71,7 +71,7 @@ class Footer extends StatelessWidget {
                     Text(
                       "CONTACT US",
                       style: defaultTextStyle.copyWith(
-                        color: backgroundColor,
+                        color: lightGreen,
                         fontSize: 20
                       ),
                     ),
@@ -84,14 +84,14 @@ class Footer extends StatelessWidget {
                             padding: const EdgeInsets.only(right: 8),
                             child: Icon(
                               Icons.phone,
-                              color: backgroundColor,
+                              color: lightGreen,
                               size: 16,
                             ),
                           ),
                           Text(
                             "07123 492311",
                             style: defaultTextStyle.copyWith(
-                              color: backgroundColor,
+                              color: lightGreen,
                               fontSize: 14,
                               letterSpacing: 1
                             ),
@@ -107,14 +107,14 @@ class Footer extends StatelessWidget {
                             padding: const EdgeInsets.only(right: 8),
                             child: Icon(
                               Icons.mail,
-                              color: backgroundColor,
+                              color: lightGreen,
                               size: 16,
                             ),
                           ),
                           Text(
-                            "info@green.co.uk",
+                            "info@semvera.com",
                             style: defaultTextStyle.copyWith(
-                              color: backgroundColor,
+                              color: lightGreen,
                               fontSize: 14,
                               letterSpacing: 0.7,
                             ),
@@ -124,6 +124,26 @@ class Footer extends StatelessWidget {
                     ),
                   ],
                 ),
+              ),
+            ),
+            const Spacer(),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+              children: [
+                 Icon(
+                  Icons.copyright,
+                  color: lightGreen,
+                  size: 14,
+                ),
+                 Text(
+                  "  2024 Semvera",
+                  style: defaultTextStyle.copyWith(
+                    color: lightGreen,
+                    fontSize: 12
+                  ),
+                )
+              ],
               ),
             )
           ],

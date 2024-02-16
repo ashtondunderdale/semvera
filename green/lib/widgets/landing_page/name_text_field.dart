@@ -19,7 +19,7 @@ class NameTextField extends StatelessWidget {
           fillColor: Colors.white,
           hintText: 'Name (optional)',
           hintStyle: defaultTextStyle.copyWith(
-            color: primaryTextColour,
+            color: darkGreen,
           ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.0),

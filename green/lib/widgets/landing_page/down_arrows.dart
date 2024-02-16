@@ -12,17 +12,17 @@ class DownArrows extends StatelessWidget {
       children: [
         Icon(
           Icons.arrow_downward,
-          color: primaryTextColour,
+          color: darkGreen,
           size: 40,
         ),
         Icon(
           Icons.arrow_downward,
-          color: primaryTextColour,
+          color: darkGreen,
           size: 40,
         ),
         Icon(
           Icons.arrow_downward,
-          color: primaryTextColour,
+          color: darkGreen,
           size: 40,
         ),  
       ],

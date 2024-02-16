@@ -17,7 +17,7 @@ class LandingInformation extends StatelessWidget {
             child: Text(
               "COMING SOON",
               style: defaultTextStyle.copyWith(
-                color: primaryTextColour,
+                color: darkGreen,
               ),
             ),
           ),
@@ -29,7 +29,7 @@ class LandingInformation extends StatelessWidget {
             style: defaultTextStyle.copyWith(
               fontSize: 52,
               fontWeight: FontWeight.bold,
-              color: primaryTextColour,
+              color: darkGreen,
               letterSpacing: 1,
             ),
           ),
@@ -37,7 +37,7 @@ class LandingInformation extends StatelessWidget {
         Text(
           "Solve problems while making a positive impact on the environment, every solution contributes to a greener, more sustainable future.",
           style: defaultTextStyle.copyWith(
-            color: primaryTextColour,
+            color: darkGreen,
             fontSize: 20,
           ),
         ),

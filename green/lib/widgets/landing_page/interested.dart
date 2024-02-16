@@ -19,7 +19,7 @@ class Interested extends StatelessWidget {
               "Interested?",
               style: defaultTextStyle.copyWith(
                 fontSize: 36,
-                color: primaryTextColour,
+                color: darkGreen,
               ),
             ),
             Padding(
@@ -27,7 +27,7 @@ class Interested extends StatelessWidget {
               child: Text(
                 interested, // Add your text here
                 style: defaultTextStyle.copyWith(
-                  color: primaryTextColour,
+                  color: darkGreen,
                   fontSize: 16,
                 ),
                 textAlign: TextAlign.center
@@ -43,13 +43,13 @@ class Interested extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: primaryTextColour)
+                  border: Border.all(color: darkGreen)
                 ),
                 child: Center(
                   child: Text(
-                    'SIGN UP',
+                    'JOIN US',
                     style: defaultTextStyle.copyWith(
-                      color: primaryTextColour,
+                      color: darkGreen,
                       fontSize: 14,
                     ),
                   ),

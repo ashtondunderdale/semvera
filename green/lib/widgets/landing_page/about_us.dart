@@ -20,7 +20,7 @@ class AboutUs extends StatelessWidget {
                 "About us",
                 style: defaultTextStyle.copyWith(
                   fontSize: 36,
-                  color: primaryTextColour
+                  color: darkGreen
                 ),
               ),
               Padding(
@@ -28,7 +28,7 @@ class AboutUs extends StatelessWidget {
                 child: Text(
                   aboutUsMessage,
                   style: defaultTextStyle.copyWith(
-                    color: primaryTextColour,
+                    color: darkGreen,
                     fontSize: 16
                   ),
                 ),

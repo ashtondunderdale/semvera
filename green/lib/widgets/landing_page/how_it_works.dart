@@ -12,7 +12,7 @@ class HowItWorks extends StatelessWidget {
       child: SizedBox(
         width: 700,
         child: Padding(
-          padding: const EdgeInsets.only(left: 48, top: 128),
+          padding: const EdgeInsets.only(left: 48, top: 96),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -20,7 +20,7 @@ class HowItWorks extends StatelessWidget {
                 "How it works",
                 style: defaultTextStyle.copyWith(
                   fontSize: 36,
-                  color: primaryTextColour
+                  color: darkGreen
                 ),
               ),
               Padding(
@@ -28,7 +28,7 @@ class HowItWorks extends StatelessWidget {
                 child: Text(
                   howItWorks,
                   style: defaultTextStyle.copyWith(
-                    color: primaryTextColour,
+                    color: darkGreen,
                     fontSize: 16,
                   ),
                 ),
