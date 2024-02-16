@@ -21,69 +21,87 @@ class LandingPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: AppBar(
+        surfaceTintColor: backgroundColor,
         backgroundColor: backgroundColor,
         title: Text(
           "Green",
           style: defaultTextStyle.copyWith(
-            color: Colors.white,
+            color: primaryTextColour,
             fontSize: 32
           ),
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SizedBox(
-            width: MediaQuery.of(context).size.width,
-            height: 600,
-            child: Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 128),
-                  child: SizedBox(
-                    width: 800,
-                    height: 400,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const LandingInformation(),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 32),
-                          child: Row(
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(bottom: 8),
-                                    child: NameTextField(nameController: nameController),
-                                  ),
-                                  Row(
-                                    children: [
-                                      EmailTextField(emailController: emailController),
-                                      EmailPopUpButton(
-                                        onPressed: () {
-                                          api.addPreLaunchEmail(emailController.text, nameController.text);
-                                          emailController.text = "";
-                                          nameController.text = "";
-                                        },
-                                      ),
-                                    ],
-                                  )
-                                ],
-                              ),
-                            ],
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: 600,
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 128),
+                    child: SizedBox(
+                      width: 800,
+                      height: 400,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const LandingInformation(),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 32),
+                            child: Row(
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(bottom: 8),
+                                      child: NameTextField(nameController: nameController),
+                                    ),
+                                    Row(
+                                      children: [
+                                        EmailTextField(emailController: emailController),
+                                        EmailPopUpButton(
+                                          onPressed: () {
+                                            api.addPreLaunchEmail(emailController.text, nameController.text);
+                                            emailController.text = "";
+                                            nameController.text = "";
+                                          },
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          const DownArrows()
-        ],
+            const DownArrows(),
+            const SizedBox(
+              width: 400,
+              height: 200,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "About us"
+                  ),
+                  Text(
+                    ""
+                  ),
+                ],
+              )
+            )
+          ],
+        ),
       ),
     );
   }

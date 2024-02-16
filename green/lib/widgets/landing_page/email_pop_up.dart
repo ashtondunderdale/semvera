@@ -32,7 +32,7 @@ class EmailPopUp extends StatelessWidget {
                       style: defaultTextStyle.copyWith(
                         fontSize: 32,
                         fontWeight: FontWeight.bold,
-                        color: const Color.fromARGB(255, 108, 182, 111),
+                        color: primaryTextColour,
                         letterSpacing: 1
                       ),
                     ),

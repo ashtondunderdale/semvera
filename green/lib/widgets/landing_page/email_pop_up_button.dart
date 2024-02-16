@@ -29,12 +29,13 @@ class EmailPopUpButton extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(8),
+            border: Border.all(color: primaryTextColour)
           ),
           child: Center(
             child: Text(
               'NOTIFY ME',
               style: defaultTextStyle.copyWith(
-                color: const Color.fromARGB(255, 172, 172, 172),
+                color: primaryTextColour,
                 fontSize: 14,
               ),
             ),
